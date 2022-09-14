@@ -14,9 +14,9 @@ public class BoxLoweringMovement : MonoBehaviour
     void Update()
     {
         Vector3 lowerHitbox = GameObject.Find("LowerHitbox").transform.position;
-        float step = 1 * Time.deltaTime;
+        float moveRate = 1f * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, lowerHitbox, moveRate);
 
-        transform.position = Vector3.MoveTowards(transform.position, lowerHitbox, step);
         if (transform.position == lowerHitbox)
         {
             Destroy(GetComponent<BoxLoweringMovement>());

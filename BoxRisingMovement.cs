@@ -15,8 +15,8 @@ public class BoxRisingMovement : MonoBehaviour
     {
         Vector3 upperHitbox = GameObject.Find("UpperHitbox").transform.position;
         float moveRate = 1f * Time.deltaTime;
-
         transform.position = Vector3.MoveTowards(transform.position, upperHitbox, moveRate);
+
         if (transform.position == upperHitbox)
         {
             GameObject.Find("Box").transform.parent = GameObject.Find("Rotating").transform;
